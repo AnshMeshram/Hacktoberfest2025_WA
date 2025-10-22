@@ -1,0 +1,220 @@
+/* Global Styling */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --bg-1: #0f1724; /* deep navy */
+  --bg-2: #121229; /* dark */
+  --accent: #00ffe7; /* teal */
+  --muted: #b5b5b5;
+  --card-bg: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+      1200px 600px at 10% 10%,
+      rgba(0, 255, 231, 0.03),
+      transparent
+    ),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: #fff;
+  padding: 32px;
+}
+
+/* Container centers the card and provides perspective for subtle 3D effects */
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.about-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px) saturate(120%);
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px) rotateX(1deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-card {
+    transition: none;
+  }
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 6px 30px rgba(0, 255, 231, 0.12);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.avatar:hover {
+  transform: scale(1.04);
+}
+
+.info h2 {
+  font-size: 1.35rem;
+  margin: 6px 0 0;
+  font-weight: 700;
+  color: #fff;
+}
+.info p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0;
+  align-items: stretch;
+}
+.stat {
+  flex: 1;
+  background: rgba(0, 255, 231, 0.04);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(0, 255, 231, 0.06);
+  transition: transform 0.22s ease, background 0.22s ease;
+}
+.stat:hover {
+  transform: translateY(-6px);
+  background: rgba(0, 255, 231, 0.08);
+}
+.stat h3 {
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.stat p {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* Current project */
+.current-project {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.current-project p {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.links a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid rgba(0, 255, 231, 0.12);
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all 0.18s ease;
+  background: transparent;
+}
+.links a:hover {
+  background: var(--accent);
+  color: var(--bg-1);
+  transform: translateY(-3px);
+}
+.links a:focus {
+  outline: 3px solid rgba(0, 255, 231, 0.12);
+  outline-offset: 3px;
+}
+
+/* Accessibility: focus-visible */
+.links a:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 255, 231, 0.08);
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  body {
+    padding: 18px;
+  }
+  .about-card {
+    padding: 18px;
+  }
+  .stats {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .info h2 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .stats {
+    flex-direction: column;
+  }
+  .stat {
+    width: 100%;
+  }
+}
+
+/* Small utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

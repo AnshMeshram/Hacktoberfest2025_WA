@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic About Me Card</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main class="about-card" role="region" aria-labelledby="profile-name">
+        <header class="card-header">
+          <img
+            src="../assets/images/anshMeshramGithub.jpg"
+            alt="Ansh Meshram photo"
+            class="avatar"
+          />
+          <div class="info">
+            <h1 id="profile-name">Ansh Meshram</h1>
+            <p>Instrumentation Engineer · Web & AI Developer</p>
+          </div>
+        </header>
+
+        <section class="stats" aria-label="Quick stats">
+          <div class="stat" aria-hidden="false">
+            <h3 id="repos">--</h3>
+            <p>Top repositories</p>
+          </div>
+          <div class="stat">
+            <h3 id="leetcode">--</h3>
+            <p>LeetCode solved</p>
+          </div>
+          <div class="stat">
+            <h3 id="streak">--</h3>
+            <p>GitHub streak</p>
+          </div>
+        </section>
+
+        <div class="current-project" aria-live="polite">
+          <p>Now coding: <strong id="project">Loading...</strong> 🎵</p>
+        </div>
+
+        <nav class="links" aria-label="Social links">
+          <a
+            href="https://github.com/anshmeshram"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://leetcode.com/anshmeshram"
+            target="_blank"
+            rel="noopener"
+            >LeetCode</a
+          >
+          <a
+            href="https://linkedin.com/in/anshmeshram"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </nav>
+      </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
